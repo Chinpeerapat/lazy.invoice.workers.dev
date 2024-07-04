@@ -1,4 +1,4 @@
-import html from './html.js'
+import htmlContent from './html.js'
 
 const contentTypes = {
   html: 'text/html;charset=UTF-8',
@@ -13,7 +13,7 @@ async function handleRequest(request) {
   const url = new URL(request.url)
 
   if (url.pathname === '/' || url.pathname === '') {
-    return new Response(html, {
+    return new Response(htmlContent, {
       headers: { 'content-type': contentTypes.html }
     })
   }
